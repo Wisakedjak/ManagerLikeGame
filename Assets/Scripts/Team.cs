@@ -7,7 +7,7 @@ namespace ManagerLikeGame
     [Serializable]
     public class Team 
     {
-        public Team(string teamName, Sprite teamLogo, string teamBranch, Sprite teamBranchLogo, int teamOffence, int teamDefence, int teamSpeed, int teamStamina, int teamMorale, int teamPassing, int teamPrestige, List<Player> players)
+        public Team(string teamName, Sprite teamLogo, string teamBranch, Sprite teamBranchLogo, int teamOffence, int teamDefence, int teamSpeed, int teamStamina, int teamMorale, int teamPassing, int teamPrestige, List<Player> players, string teamFormation)
         {
             TeamName = teamName;
             TeamLogo = teamLogo;
@@ -21,6 +21,7 @@ namespace ManagerLikeGame
             TeamPassing = teamPassing;
             TeamPrestige = teamPrestige;
             Players = players;
+            TeamFormation = teamFormation;
         }
         
         public int TeamPrestige { get; private set; }
@@ -43,6 +44,8 @@ namespace ManagerLikeGame
         public int TeamMorale { get; private set; }
         
         public int TeamPassing { get; private set; }
+        
+        public string TeamFormation { get; private set; }
         
         public List<Player> Players { get; private set; }
 

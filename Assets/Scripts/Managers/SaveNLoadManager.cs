@@ -39,7 +39,7 @@ namespace ManagerLikeGame
                     new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
                     new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
                     new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
-                }),{ new Team("Beşiktaş", teamSprite, "Football", null, 80, 70, 90, 85, 75
+                },"4-4-2"),{ new Team("Beşiktaş", teamSprite, "Football", null, 80, 70, 90, 85, 75
                 , 85, 80, new List<Player>()
                 {
                     new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
@@ -60,19 +60,8 @@ namespace ManagerLikeGame
                     new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
                     new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
                     new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
-                })}});
+                }, "4-4-2")}});
             SaveLeagueData(league);
-            Team teamData = LoadTeamData("Fenerbahçe");
-            Debug.Log(teamData.TeamName);
-            Debug.Log(teamData.TeamLogo);
-            Debug.Log(teamData.TeamBranch);
-            Debug.Log(teamData.TeamBranchLogo);
-            Debug.Log(teamData.TeamOffence);
-            Debug.Log(teamData.TeamDefence);
-            Debug.Log(teamData.TeamSpeed);
-            Debug.Log(teamData.TeamStamina);
-            Debug.Log(teamData.TeamMorale);
-            Debug.Log(teamData.Players[0].PlayerName);
             
         }
         public List<PlayerData> datas = new List<PlayerData>(20);
@@ -110,7 +99,8 @@ namespace ManagerLikeGame
                 teamMorale = team.TeamMorale,
                 teamPassing = team.TeamPassing,
                 teamPrestige = team.TeamPrestige,
-                players = new PlayerData[team.Players.Count]
+                players = new PlayerData[team.Players.Count],
+                teamFormation = team.TeamFormation
             };
             for (int i = 0; i < team.Players.Count; i++)
             {
@@ -158,7 +148,7 @@ namespace ManagerLikeGame
                 players.Add(new Player(playerData.playerName,playerSprite, playerData.playerAge, playerData.playerNationality, playerData.playerJerseyNumber, null, playerData.playerBranch, null, playerData.playerPosition, null, playerData.playerOffence, playerData.playerDefence, playerData.playerSpeed, playerData.playerStamina, playerData.playerMorale, playerData.playerPassing, playerData.playerLeadership));
             }
             Sprite teamSprite = Resources.Load<Sprite>("PlaceHolderSprites/"+teamData.teamLogo);
-            return new Team(teamData.teamName, teamSprite, teamData.teamBranch, null, teamData.teamOffence, teamData.teamDefence, teamData.teamSpeed, teamData.teamStamina, teamData.teamMorale, teamData.teamPassing, teamData.teamPrestige, players);
+            return new Team(teamData.teamName, teamSprite, teamData.teamBranch, null, teamData.teamOffence, teamData.teamDefence, teamData.teamSpeed, teamData.teamStamina, teamData.teamMorale, teamData.teamPassing, teamData.teamPrestige, players,teamData.teamFormation);
         }
     }
     
@@ -187,6 +177,7 @@ namespace ManagerLikeGame
         public int teamPassing;
         public int teamPrestige;
         public PlayerData[] players;
+        public string teamFormation;
     }
     
     [Serializable]
