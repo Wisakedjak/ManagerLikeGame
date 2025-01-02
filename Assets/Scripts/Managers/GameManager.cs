@@ -9,8 +9,12 @@ namespace ManagerLikeGame
         [Header("Managers")]
         [SerializeField] private SaveNLoadManager saveNLoadManager;
         [SerializeField] private UIManager uiManager;
+        [SerializeField] private TeamMainMenuManager teamMainMenuManager;
 
         [SerializeField] private List<Team> teams=new List<Team>();
+        [SerializeField] private List<League> leagues=new List<League>();
+
+        private Team selectedTeam;
         
 
         private void Awake()
@@ -21,6 +25,7 @@ namespace ManagerLikeGame
         private void Start()
         {
             Subscriptions();
+            LoadLeagues();
             LoadTeams();
         }
 
@@ -28,12 +33,19 @@ namespace ManagerLikeGame
         {
             uiManager.OnPlayButtonClicked += OnPlayButtonClicked;
             uiManager.OnTeamsButtonClicked += OnTeamsButtonClicked;
+            uiManager.OnContinueButtonClicked += OnContinueButtonClicked;
         }
 
         private void LoadTeams()
         {
             Team team = saveNLoadManager.LoadTeamData("Fenerbahçe");
             teams.Add(team);
+        }
+
+        private void LoadLeagues()
+        {
+            League league = saveNLoadManager.LoadLeagueData();
+            leagues.Add(league);
         }
 
         private void OnTeamsButtonClicked()
@@ -45,12 +57,24 @@ namespace ManagerLikeGame
         {
             if (uiManager.SelectedTeam==null)
             {
-                Debug.Log("Please select a team");
-                uiManager.CreateTeams(teams);
+                Debug.Log("Please select a league");
+                uiManager.CreateLeagues(leagues);
                 return;
             }
             Debug.Log("Play button clicked");
             
+        }
+        
+        private void OnContinueButtonClicked()
+        {
+            selectedTeam = GetSelectedTeam();
+            uiManager.ContinueAfterTeamSelect();
+            teamMainMenuManager.SetTeam(selectedTeam);
+        }
+        
+        private Team GetSelectedTeam()
+        {
+            return uiManager.SelectedTeam.Team;
         }
     }
     

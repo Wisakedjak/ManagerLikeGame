@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -11,10 +12,12 @@ namespace ManagerLikeGame
 
         private void Start()
         {
-            Sprite sprite = Resources.Load<Sprite>("PlaceHolderSprites/Tuncer");
+            /*Sprite sprite = Resources.Load<Sprite>("PlaceHolderSprites/Tuncer");
             sprite.name = "Tuncer";
             Sprite teamSprite = Resources.Load<Sprite>("PlaceHolderSprites/Fenerbahce");
             teamSprite.name = "Fenerbahce";
+            Sprite teamSpriteB = Resources.Load<Sprite>("PlaceHolderSprites/Besiktas");
+            teamSpriteB.name = "Besiktas";
             Sprite leagueSprite = Resources.Load<Sprite>("PlaceHolderSprites/SuperLig");
             leagueSprite.name = "SuperLig";
             League league = new League("Super Lig", leagueSprite, "Football", null, new List<Team>()
@@ -39,7 +42,7 @@ namespace ManagerLikeGame
                     new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
                     new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
                     new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
-                },"4-4-2"),{ new Team("Beşiktaş", teamSprite, "Football", null, 80, 70, 90, 85, 75
+                },"4-4-2"),{ new Team("Beşiktaş", teamSpriteB, "Football", null, 80, 70, 90, 85, 75
                 , 85, 80, new List<Player>()
                 {
                     new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
@@ -60,8 +63,8 @@ namespace ManagerLikeGame
                     new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
                     new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
                     new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
-                }, "4-4-2")}});
-            SaveLeagueData(league);
+                }, "4-2-3-1")}});
+            SaveLeagueData(league);*/
             
         }
         public List<PlayerData> datas = new List<PlayerData>(20);
@@ -134,11 +137,33 @@ namespace ManagerLikeGame
         
         public Team LoadTeamData(string teamName)
         {
-            string json = PlayerPrefs.GetString(teamName+"TeamData");
-            TeamData teamData = JsonUtility.FromJson<TeamData>(json);
-            return CreateTeam(teamData);
+            string path = Application.persistentDataPath + "/"  + "LeagueData.json";
+            string json = File.ReadAllText(path);
+            LeagueData leagueData = JsonUtility.FromJson<LeagueData>(json);
+            TeamData data = leagueData.teams.First(x=>x.teamName == teamName);
+            return CreateTeam(data);
         }
         
+        public League LoadLeagueData()
+        {
+            string path = Application.persistentDataPath + "/"  + "LeagueData.json";
+            string json = File.ReadAllText(path);
+            LeagueData leagueData = JsonUtility.FromJson<LeagueData>(json);
+            return CreateLeague(leagueData);
+        }
+
+        private League CreateLeague(LeagueData leagueData)
+        {
+            List<Team> teams = new List<Team>();
+            foreach (var teamData in leagueData.teams)
+            {
+                teams.Add(CreateTeam(teamData));
+            }
+            Sprite leagueSprite = Resources.Load<Sprite>("PlaceHolderSprites/"+leagueData.leagueLogo);
+            Sprite leagueBranchSprite = Resources.Load<Sprite>("PlaceHolderSprites/"+leagueData.leagueBranchLogo);
+            return new League(leagueData.leagueName, leagueSprite, leagueData.leagueBranch, leagueBranchSprite, teams);
+        }
+
         private Team CreateTeam(TeamData teamData)
         {
             List<Player> players = new List<Player>();

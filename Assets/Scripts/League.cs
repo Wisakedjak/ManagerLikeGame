@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace ManagerLikeGame
 {
+    [Serializable]
     public class League
     {
         public League(string name, Sprite logo, string branch, Sprite branchLogo, List<Team> teams)

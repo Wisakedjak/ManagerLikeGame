@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using ManagerLikeGame.UIControllers;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,8 +13,9 @@ namespace ManagerLikeGame
         [Header("Serialize Fields")] 
         [SerializeField] private Button playButton;
         [SerializeField] private Button teamsButton;
+        [SerializeField] private Button continueButton;
         [SerializeField] private GameObject substitutePlayerGo;
-        
+        [SerializeField] private Transform formations;
         
         [Header("Canvases")]
         [SerializeField] private GameObject mainMenuCanvas;
@@ -21,25 +23,36 @@ namespace ManagerLikeGame
         
         [Header("Panels")] 
         [SerializeField] private GameObject teamPanel;
+        [SerializeField] private GameObject leaguePanel;
         
 
         private TeamPanelController _teamPanelController;
+        private LeaguePanelController _leaguePanelController;
         public TeamObject SelectedTeam{get; private set;}
         
         
         public event Action OnPlayButtonClicked;
         public event Action OnTeamsButtonClicked;
+        public event Action OnContinueButtonClicked;
         
         public void Subscriptions()
         {
             playButton.onClick.AddListener(PlayButtonClicked);
             teamsButton.onClick.AddListener(TeamsButtonClicked);
+            continueButton.onClick.AddListener(ContinueButtonClicked);
+            for (int i = 0; i < formations.childCount; i++)
+            {
+                var button = formations.GetChild(i).GetComponent<Button>();
+                var formation = button.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
+                button.onClick.AddListener(() => ChangeFormation(formation));
+            }
             GetComponents();
         }
         
         private void GetComponents()
         {
             _teamPanelController = teamPanel.GetComponent<TeamPanelController>();
+            _leaguePanelController = leaguePanel.GetComponent<LeaguePanelController>();
         }
         
         private void PlayButtonClicked()
@@ -50,6 +63,25 @@ namespace ManagerLikeGame
         private void TeamsButtonClicked()
         {
             OnTeamsButtonClicked?.Invoke();
+        }
+
+        private void ContinueButtonClicked()
+        {
+            OnContinueButtonClicked?.Invoke();
+        }
+
+        public void CreateLeagues(List<League> leagues)
+        {
+            foreach (var l in leagues)
+            {
+                CreateLeague(l);
+            }
+            OpenCloseLeaguePanel(true);
+        }
+
+        private void CreateLeague(League league)
+        {
+            _leaguePanelController.CreateLeague(league).OnSelectButtonClicked += OnLeagueSelectButtonClicked;
         }
 
         public void CreateTeams(List<Team> teams)
@@ -66,35 +98,51 @@ namespace ManagerLikeGame
             teamPanel.SetActive(open);
         }
         
+        private void OpenCloseLeaguePanel(bool open)
+        {
+            leaguePanel.SetActive(open);
+        }
+        
+        
         private void CreateTeam(Team team)
         {
-            _teamPanelController.CreateTeam(team).OnSelectButtonClicked+= OnSelectButtonClicked;
+            _teamPanelController.CreateTeam(team).OnSelectButtonClicked+= OnTeamSelectButtonClicked;
             
         }
 
-        private void OnSelectButtonClicked(TeamObject teamObject)
+        private void OnTeamSelectButtonClicked(TeamObject teamObject)
         {
-            if (SelectedTeam==teamObject)
+            /*if (SelectedTeam==teamObject)
             {
                 return;
-            }
+            }*/
             if (SelectedTeam != null)
             {
                 SelectedTeam.selectedImage.SetActive(false);
             }
             SelectedTeam = teamObject;
             SelectedTeam.selectedImage.SetActive(true);
-            int counter = 0;
-            foreach (var t in teamObject.Team.Players)
-            {
-                if (counter<11)
-                {
-                    _teamPanelController.CreatePlayer(t);
-                    counter++;
-                    continue;
-                }
-                _teamPanelController.CreateSubstitutePlayer(t);
-            }
+            _teamPanelController.DestroyAll();
+            _teamPanelController.CreatePlayer(teamObject.Team);
+        }
+        
+        private void ChangeFormation(string formation)
+        {
+            SelectedTeam.Team.TeamFormation = formation;
+            OnTeamSelectButtonClicked(SelectedTeam);
+        }
+        
+        private void OnLeagueSelectButtonClicked(LeagueObject leagueObject)
+        {
+            CreateTeams(leagueObject.League.Teams);
+            OpenCloseLeaguePanel(false);
+            OpenCloseTeamsPanel(true);
+        }
+
+        public void ContinueAfterTeamSelect()
+        {
+            OpenCloseTeamsPanel(false);
+            OpenCloseLeaguePanel(false);
         }
     }
 }

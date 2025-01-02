@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace ManagerLikeGame
 {
+    [Serializable]
     public class Player 
     {
         public Player(string playerName, Sprite playerImage,string playerAge, string playerNationality,string playerJerseyNumber, Sprite playerTeamLogo, string playerBranch, Sprite playerBranchLogo, string playerPosition, Sprite playerPositionLogo, int playerOffence, int playerDefence, int playerSpeed, int playerStamina, int playerMorale, int playerPassing, int playerLeadership)

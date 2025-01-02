@@ -45,7 +45,7 @@ namespace ManagerLikeGame
         
         public int TeamPassing { get; private set; }
         
-        public string TeamFormation { get; private set; }
+        public string TeamFormation { get;  set; }
         
         public List<Player> Players { get; private set; }
 
