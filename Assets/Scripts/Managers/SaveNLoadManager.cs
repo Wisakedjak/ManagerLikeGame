@@ -12,14 +12,24 @@ namespace ManagerLikeGame
 
         private void Start()
         {
-            /*Sprite sprite = Resources.Load<Sprite>("PlaceHolderSprites/Tuncer");
+            Sprite sprite = Resources.Load<Sprite>("PlaceHolderSprites/Tuncer");
             sprite.name = "Tuncer";
             Sprite teamSprite = Resources.Load<Sprite>("PlaceHolderSprites/Fenerbahce");
             teamSprite.name = "Fenerbahce";
             Sprite teamSpriteB = Resources.Load<Sprite>("PlaceHolderSprites/Besiktas");
             teamSpriteB.name = "Besiktas";
+            Sprite teamSpriteC = Resources.Load<Sprite>("PlaceHolderSprites/Antalyaspor");
+            teamSpriteC.name = "Antalyaspor";
+            Sprite teamSpriteD = Resources.Load<Sprite>("PlaceHolderSprites/Galatasaray");
+            teamSpriteD.name = "Galatasaray";
+            Sprite teamSpriteE = Resources.Load<Sprite>("PlaceHolderSprites/Eskisehirspor");
+            teamSpriteE.name = "Eskisehirspor";
+            Sprite teamSpriteF = Resources.Load<Sprite>("PlaceHolderSprites/Trabzonspor");
+            teamSpriteF.name = "Trabzonspor";
             Sprite leagueSprite = Resources.Load<Sprite>("PlaceHolderSprites/SuperLig");
             leagueSprite.name = "SuperLig";
+            Sprite leagueSpriteA = Resources.Load<Sprite>("PlaceHolderSprites/UEFAEuropaLeague");
+            leagueSpriteA.name = "UEFAEuropaLeague";
             League league = new League("Super Lig", leagueSprite, "Football", null, new List<Team>()
             { new Team("Fenerbahçe", teamSprite, "Football", null, 80, 70, 90, 85, 75
                 , 85, 80, new List<Player>()
@@ -63,8 +73,229 @@ namespace ManagerLikeGame
                     new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
                     new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
                     new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                }, "4-2-3-1")}
+            ,{ new Team("Galatasaray", teamSpriteD, "Football", null, 80, 70, 90, 85, 75
+                , 85, 80, new List<Player>()
+                {
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                }, "4-2-3-1")}
+            ,{ new Team("Antalyaspor", teamSpriteC, "Football", null, 80, 70, 90, 85, 75
+                , 85, 80, new List<Player>()
+                {
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                }, "4-2-3-1")}
+            ,{ new Team("Eskisehirspor", teamSpriteE, "Football", null, 80, 70, 90, 85, 75
+                , 85, 80, new List<Player>()
+                {
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                }, "4-2-3-1")}
+            ,{ new Team("Trabzonspor", teamSpriteF, "Football", null, 80, 70, 90, 85, 75
+                , 85, 80, new List<Player>()
+                {
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
                 }, "4-2-3-1")}});
-            SaveLeagueData(league);*/
+            League leagueA = new League("UEFA Europa League", leagueSpriteA, "Football", null, new List<Team>()
+            { new Team("Fenerbahçe", teamSprite, "Football", null, 80, 70, 90, 85, 75
+                , 85, 80, new List<Player>()
+                {
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                },"4-4-2"),{ new Team("Beşiktaş", teamSpriteB, "Football", null, 80, 70, 90, 85, 75
+                , 85, 80, new List<Player>()
+                {
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                }, "4-2-3-1")}
+            ,{ new Team("Galatasaray", teamSpriteD, "Football", null, 80, 70, 90, 85, 75
+                , 85, 80, new List<Player>()
+                {
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                }, "4-2-3-1")}
+            ,{ new Team("Antalyaspor", teamSpriteC, "Football", null, 80, 70, 90, 85, 75
+                , 85, 80, new List<Player>()
+                {
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                }, "4-2-3-1")}
+            ,{ new Team("Eskisehirspor", teamSpriteE, "Football", null, 80, 70, 90, 85, 75
+                , 85, 80, new List<Player>()
+                {
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                }, "4-2-3-1")}
+            ,{ new Team("Trabzonspor", teamSpriteF, "Football", null, 80, 70, 90, 85, 75
+                , 85, 80, new List<Player>()
+                {
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                    new Player("Mahmut Tuncer",sprite, "31", "Turkey", "69",null, "Football", null, "FW", null, 75, 85, 80, 90, 70, 80, 85),
+                }, "4-2-3-1")}});
+            SaveLeagueData(league);
+            //SaveLeagueData(leagueA);
             
         }
         public List<PlayerData> datas = new List<PlayerData>(20);

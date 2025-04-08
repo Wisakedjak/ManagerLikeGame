@@ -24,7 +24,14 @@ namespace ManagerLikeGame
         [Header("Panels")] 
         [SerializeField] private GameObject teamPanel;
         [SerializeField] private GameObject leaguePanel;
+        [SerializeField] private GameObject rosterPanel;
+        [SerializeField] private GameObject schedulePanel;
+        [SerializeField] private GameObject betPanel;
+
+        [Header("Fixtur")]
+        [SerializeField] private Fixtur _fixtur;
         
+        private LeagueObject _leagueObject;
 
         private TeamPanelController _teamPanelController;
         private LeaguePanelController _leaguePanelController;
@@ -34,7 +41,8 @@ namespace ManagerLikeGame
         public event Action OnPlayButtonClicked;
         public event Action OnTeamsButtonClicked;
         public event Action OnContinueButtonClicked;
-        
+
+
         public void Subscriptions()
         {
             playButton.onClick.AddListener(PlayButtonClicked);
@@ -72,6 +80,7 @@ namespace ManagerLikeGame
 
         public void CreateLeagues(List<League> leagues)
         {
+            print(leagues.Count);
             foreach (var l in leagues)
             {
                 CreateLeague(l);
@@ -103,6 +112,21 @@ namespace ManagerLikeGame
             leaguePanel.SetActive(open);
         }
         
+
+        public void OpenCloseRosterPanel(bool open)
+        {
+            rosterPanel.SetActive(open);
+        }
+
+        public void OpenCloseSchedulePanel(bool open)
+        {
+            schedulePanel.SetActive(open);
+        }
+
+        public void OpenCloseBetPanel(bool open)
+        {
+             betPanel.SetActive(open);
+        }
         
         private void CreateTeam(Team team)
         {
@@ -137,12 +161,14 @@ namespace ManagerLikeGame
             CreateTeams(leagueObject.League.Teams);
             OpenCloseLeaguePanel(false);
             OpenCloseTeamsPanel(true);
+            _leagueObject = leagueObject;
         }
 
         public void ContinueAfterTeamSelect()
         {
             OpenCloseTeamsPanel(false);
             OpenCloseLeaguePanel(false);
+            _fixtur.LeagueObjectSend(_leagueObject, SelectedTeam);
         }
     }
 }

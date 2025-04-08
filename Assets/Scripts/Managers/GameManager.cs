@@ -34,6 +34,7 @@ namespace ManagerLikeGame
             uiManager.OnPlayButtonClicked += OnPlayButtonClicked;
             uiManager.OnTeamsButtonClicked += OnTeamsButtonClicked;
             uiManager.OnContinueButtonClicked += OnContinueButtonClicked;
+            
         }
 
         private void LoadTeams()
@@ -71,7 +72,7 @@ namespace ManagerLikeGame
             uiManager.ContinueAfterTeamSelect();
             teamMainMenuManager.SetTeam(selectedTeam);
         }
-        
+
         private Team GetSelectedTeam()
         {
             return uiManager.SelectedTeam.Team;
